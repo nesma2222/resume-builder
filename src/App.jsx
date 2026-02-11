@@ -14,7 +14,6 @@ import PrivateRoute from "./routes/PrivateRoute";
 
 function App() {
   return (
-    <BrowserRouter>
       
       <Routes>
         <Route path="/" element={<Login />} />    
@@ -25,7 +24,7 @@ function App() {
         <Route path="/editor" element={<ResumeEditor />} />
         <Route path="/preview" element={<Preview />} />
       </Routes>
-    </BrowserRouter>
+    
   );
 }
 
