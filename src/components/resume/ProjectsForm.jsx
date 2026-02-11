@@ -12,6 +12,7 @@ const ProjectsForm = ({ projects, setResumeData }) => {
   };
 
   const addProject = () => {
+    if (!project.title || !project.description) return; // Prevent empty projects
     setResumeData(prev => ({
       ...prev,
       projects: [...prev.projects, project]
@@ -21,13 +22,14 @@ const ProjectsForm = ({ projects, setResumeData }) => {
   };
 
   return (
-    <div className="mt-6">
-      <h3 className="font-semibold mb-2">Projects</h3>
+    <div className="space-y-4 mt-6">
+
+      <h3 className="text-lg font-semibold">Projects</h3>
 
       <input
         name="title"
         placeholder="Project Title"
-        className="w-full p-2 border rounded mb-2"
+        className="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
         value={project.title}
         onChange={handleChange}
       />
@@ -35,17 +37,18 @@ const ProjectsForm = ({ projects, setResumeData }) => {
       <textarea
         name="description"
         placeholder="Project Description"
-        className="w-full p-2 border rounded mb-2"
+        className="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
         value={project.description}
         onChange={handleChange}
       />
 
       <button
         onClick={addProject}
-        className="bg-blue-500 text-grey px-3 py-1 rounded"
+        className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition"
       >
         Add Project
       </button>
+
     </div>
   );
 };

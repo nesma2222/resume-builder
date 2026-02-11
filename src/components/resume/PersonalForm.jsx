@@ -11,14 +11,16 @@ const PersonalForm = ({ personal, setResumeData }) => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mt-4">
+
+      <h3 className="text-lg font-semibold">Personal Information</h3>
 
       <input
         name="name"
         placeholder="Full Name"
         value={personal.name}
         onChange={handleChange}
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
       />
 
       <input
@@ -26,7 +28,7 @@ const PersonalForm = ({ personal, setResumeData }) => {
         placeholder="Email"
         value={personal.email}
         onChange={handleChange}
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
       />
 
       <input
@@ -34,7 +36,7 @@ const PersonalForm = ({ personal, setResumeData }) => {
         placeholder="Phone"
         value={personal.phone}
         onChange={handleChange}
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
       />
 
       <input
@@ -42,15 +44,15 @@ const PersonalForm = ({ personal, setResumeData }) => {
         placeholder="LinkedIn"
         value={personal.linkedin}
         onChange={handleChange}
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
       />
 
       <textarea
         name="summary"
-        placeholder="Summary"
+        placeholder="Professional Summary"
         value={personal.summary}
         onChange={handleChange}
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
       />
 
     </div>

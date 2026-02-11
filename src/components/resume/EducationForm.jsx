@@ -23,7 +23,6 @@ const EducationForm = ({ education, setResumeData }) => {
       education: [...prev.education, edu]
     }));
 
-    // Clear form
     setEdu({
       college: "",
       degree: "",
@@ -33,7 +32,6 @@ const EducationForm = ({ education, setResumeData }) => {
 
   return (
     <div className="space-y-4 mt-6">
-
       <h3 className="text-lg font-semibold">Education</h3>
 
       <input
@@ -62,11 +60,21 @@ const EducationForm = ({ education, setResumeData }) => {
 
       <button
         onClick={addEducation}
-        className="bg-blue-500 text-grey px-4 py-2 rounded"
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
       >
         Add Education
       </button>
 
+      {/* Live added education */}
+      {education.length > 0 && (
+        <ul className="mt-2 list-disc ml-5">
+          {education.map((eduItem, index) => (
+            <li key={index}>
+              {eduItem.degree} - {eduItem.college} ({eduItem.year})
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

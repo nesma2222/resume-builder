@@ -3,20 +3,25 @@ import Topbar from "../components/Topbar";
 
 const MainLayout = ({ children }) => {
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex h-screen bg-gray-50 overflow-hidden">
 
       {/* Sidebar */}
       <Sidebar />
 
-      {/* Content Area */}
-      <div className="flex-1 flex flex-col">
+      {/* Main Content Area */}
+      <div className="flex flex-col flex-1 overflow-hidden">
 
         {/* Topbar */}
         <Topbar />
 
         {/* Page Content */}
-        <main className="p-6">
-          {children}
+        <main className="flex-1 overflow-y-auto p-6 md:p-8">
+
+          {/* Centered Professional Container */}
+          <div className="max-w-6xl mx-auto">
+            {children}
+          </div>
+
         </main>
 
       </div>

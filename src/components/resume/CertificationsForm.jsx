@@ -5,7 +5,7 @@ const CertificationsForm = ({ certifications, setResumeData }) => {
   const [cert, setCert] = useState("");
 
   const addCertification = () => {
-    if (!cert) return;
+    if (!cert.trim()) return;
 
     setResumeData(prev => ({
       ...prev,
@@ -29,10 +29,17 @@ const CertificationsForm = ({ certifications, setResumeData }) => {
 
       <button
         onClick={addCertification}
-        className="bg-blue-500 text-grey px-3 py-1 rounded"
+        className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
       >
         Add Certification
       </button>
+
+      {/* Show added certifications */}
+      <ul className="mt-3 list-disc ml-5">
+        {certifications.map((c, i) => (
+          <li key={i}>{c}</li>
+        ))}
+      </ul>
     </div>
   );
 };
